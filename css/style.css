@@ -1,0 +1,115 @@
+@font-face {
+    font-family: "misaki_gothic_2nd";
+    src: url("../font/misaki_gothic_2nd.ttf") format("truetype");
+    font-display: swap;
+  }
+  .ttl{
+    font-size: 50px;
+    font-family: "misaki_gothic_2nd",sans-serif;
+  }
+
+.dq-window-11 {
+    background-color: black;
+    padding: 0.15rem;
+    margin-top: 110px;
+    margin-bottom: 110px
+}
+  
+.dq-window-21 {
+    background-color: white;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+}
+  
+.dq-window-31 {
+    color: white;
+    background-color: black;;
+    border-radius: 0.3rem;
+    padding: 1.0rem 0.75rem;
+    line-height: 2;
+}
+  
+.dq-window-1 {
+    background-color: black;
+    padding: 0.15rem;
+    width: fit-content;
+    margin-top: 110px;
+    margin-bottom: 110px
+}
+  
+.dq-window-2 {
+    background-color: white;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    width: fit-content;
+}
+  
+.dq-window-3 {
+    color: white;
+    background-color: black;
+    border-radius: 0.3rem;
+    padding: 1.0rem 0.75rem;
+    line-height: 2;
+    width: fit-content;
+}
+  
+h1{
+    font-family: "misaki_gothic_2nd";
+    color: white
+}
+
+p{
+    padding-left: 2em;
+}
+
+body {
+    background-color: black;
+}
+
+.body-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.section {
+    margin-bottom: 110px;
+}
+
+.text ,small{
+    color: white;
+}
+
+small {
+    display: block;
+    text-align: right;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header-inner {
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    left: 0;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    filter: invert(100%);
+}
