@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <title>SantaHirai Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
@@ -52,10 +53,10 @@
                     <div class="dq-window-31">
                         <div class="text">
                             <h1>＊ About Me</h1>
-                            <p>　岐阜県出身の高専生です。高専で5年間電気工学と情報工学を学んだ後、現在高専の専攻科で他分野についても幅広く学んでいます。チーム内でのコミュニケーションを大切にし、互いに学び合いながら成長していくことを心がけています。将来的には、社会に貢献できるエンジニアとして働けることが目標です。</p>
+                            <p>　岐阜県出身の高専生です。高専で5年間電気工学と情報工学を学んだ後、現在高専の専攻科で他分野についても幅広く学んでいます。所属する研究室は国際色豊かで留学生と接する機会も多く、日常的に英語でのコミュニケーションをしており、ボードゲームなどを使って交流しています。チーム内でのコミュニケーションを大切にし、互いに学び合いながら成長していくことを心がけています。将来的には、社会に貢献できるエンジニアとして働くことが目標です。</p>
                             <p>- GitHub: <a href= "https://github.com/santahirai">https://github.com/santahirai</a></p>
 
-                            <h2 style="padding-left: 1em;">Interest</h2>
+                            <h2 style="padding-left: 1em;">＊ Interest</h2>
                             <ul>
                                 <li>ラーメン</li>
                                 <li>車</li>
@@ -77,7 +78,7 @@
                         <div class="text">
                             <h1>＊ Research</h1>
                             <img src="img/research.png" alt="research" class="image">
-                            <p>　多くの情報や口コミから類似の観光地を探すのは大変です。高専本科の研究では、自然言語処理を用いて口コミを分析し、観光地の類似度を自動測定するシステムを開発しました。具体的には、レビューから「滝」や「スキー」等の特徴語をTF-IDFで抽出し、Word2Vecの学習済みモデルで単語を数値化。その数値間の近さ(コサイン類似度)で類似度を計算します。結果、スキー場同士など同種の場所で高い類似度が算出でき、観光サイトの推薦機能等への応用が期待されます。</p>
+                            <p>　多くの情報や口コミから類似の観光地を探すのは大変です。高専本科の研究では、自然言語処理を用いて口コミを分析し、観光地の類似度を数値化するシステムを開発しました。具体的には、レビューから「滝」や「スキー」等の観光地の特徴を表す単語をTF-IDFで抽出し、Word2Vecの学習済みモデルで単語をベクトル化。その単語ベクトル間の近さ(コサイン類似度)で類似度を計算したのちに、その値を使って観光地間の類似度を算出します。結果、スキー場同士や公園同士など同種の場所で高い類似度が算出できました。この研究は、観光サイトの推薦機能等への応用が期待できると考えています。</p>
                         </div>
                     </div>
                 </div>
@@ -89,17 +90,91 @@
                 <div class="dq-window-21">
                     <div class="dq-window-31">
                         <div class="text">
-                            <h1>＊ Skill</h1>
-                            <p></p>
+                            <h1>＊ Skills</h1>
+                            <canvas id="mySkillChart"></canvas>
+                            <!-- CDN -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+                            <script>
+                                var ctx = document.getElementById("mySkillChart");
+                                Chart.defaults.global.defaultFontSize = 20;
+                                var myRadarChart = new Chart(ctx, {
+                                    type: 'radar', 
+                                    data: { 
+                                        labels: ["HEML/CSS", "JavaScript", "Git/GitHub", "MySQL", "Python", "Rust", "Java", "C"],
+                                        
+                                        datasets: [{
+                                            label: "Skill Level",
+                                            data: [4, 3, 3, 4, 4, 2, 3, 3],
+                                            backgroundColor: 'RGBA(225,255,255, 0.5)',
+                                            borderColor: 'RGBA(255,255,255, 1)',
+                                            borderWidth: 1,
+                                            pointBackgroundColor: 'rgba(0, 0, 0, 0)'
+                                            
+                                        }]
+                                    },
+                                    options: {
+                                        title: {
+                                            display: false,
+                                            text: 'SkillChart',
+                                            fontFamily: "misaki_gothic_2nd"
+                                        },
+                                        scale: {
+                                            ticks:{
+                                                suggestedMin: 0,
+                                                suggestedMax: 4,
+                                                stepSize: 1,
+                                                callback: function(value, index, values){
+                                                    return  value
+                                                },
+                                                fontSize: 20,
+                                                display: false
+                                            },
+                                            gridLines:{
+                                                color: 'RGB(255,255,255)'
+                                            },
+                                            pointLabels: {
+                                                fontSize: 20,
+                                                fontFamily: "misaki_gothic_2nd"
+                                            }
+                                        },
+                                        legend: {
+                                            display: false
+                                        },
+                                        animation: {
+                                            duration: 3000
+                                        },
+                                                 
+                                    }
+                                });
+                            </script>
+                            <h3 style="margin-left:1em">＊ Skill Level</h2>
+                            <p>
+                                0 : できない<br>
+                                1 : 学校の授業で触れた<br>
+                                2 : 趣味で学習した<br>
+                                3 : 参考書などをもとに自分で実装できる<br>
+                                4 : サービス開発・製品化をした
+                            </p>
+                            <h2 style="margin-left:1em">＊ Other Skills</h3>
+                            <ul>
+                                <li>TOEIC : 670 (2024-09)</li>
+                                <li>技術英語能力検定 : 2級 (2022-07)</li>
+                                <li>アマチュア無線技士 : 3級 (2022-03)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    </div>
+        <div class="section">
+            <div class="centering">
+                <h1>Thank you for coming!</h1>
+            </div>
+        </div>
 
-    <small>&copy; 2025 SantaHirai</small>
-    
+    </div>
+    <small>&copy;2025 <a href= "https://github.com/santahirai">SantaHirai</a></small>
+    <p id="page-top"><a href="#">TOP</a></p>
 </body>
 </html>
