@@ -3,13 +3,15 @@
     src: url("../font/misaki_gothic_2nd.ttf") format("truetype");
     font-display: swap;
   }
-  .ttl{
-    font-size: 50px;
-    font-family: "misaki_gothic_2nd",sans-serif;
+
+  @font-face {
+    font-family: "NotoSansJP";
+    src: url("../font/NotoSansJP-Medium.ttf") format("truetype");
+    font-display: swap;
   }
 
 .dq-window-11 {
-    background-color: black;
+    background-color: #333333;
     padding: 0.15rem;
     margin-top: 110px;
     margin-bottom: 110px
@@ -23,14 +25,14 @@
   
 .dq-window-31 {
     color: white;
-    background-color: black;;
+    background-color: #333333;;
     border-radius: 0.3rem;
     padding: 1.0rem 0.75rem;
     line-height: 2;
 }
   
 .dq-window-1 {
-    background-color: black;
+    background-color: #333333;
     padding: 0.15rem;
     width: fit-content;
     padding-top: 110px;
@@ -46,7 +48,7 @@
   
 .dq-window-3 {
     color: white;
-    background-color: black;
+    background-color: #333333;
     border-radius: 0.3rem;
     padding: 1.0rem 0.75rem;
     line-height: 2;
@@ -63,12 +65,16 @@ p{
     padding-right: 2em;
 }
 
+ul,p,small{
+    font-family: "NotoSansJP";
+}
+
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: #333333;
 }
 
 .body-inner {
-    background-color: black;
+    background-color: #333333;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -89,9 +95,17 @@ small {
     text-align: center;
 }
 
+.caption{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .header {
-    margin-bottom: 30px;
-    background-color: black;
+    background-color: #333333;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-inner {
@@ -118,7 +132,7 @@ small {
 }
 
 .image {
-  max-width: 50%;
+  max-width: 60%;
   height: auto;
   display: block;
   margin-left: auto;
@@ -145,7 +159,7 @@ z-index: 99;
 #page-top a {
 background: #ffffff;
 text-decoration: none;
-color: #000000;
+color: #333333;
 font-family: "misaki_gothic_2nd";
 font-size: 13pt;
 width: 60px;
