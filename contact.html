@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <title>Contact - SantaHirai Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+	    <div class="header-inner">
+            <div class="logo-container">
+                <a class="header-logo" href="./index.html">
+                    <img src="img/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+            <div class="title-container">
+                <h1>Santa Hirai</h1>
+            </div>            
+        </div>
+    </header>
+    <div class="body-inner">
+
+        <div class="section">
+            <div class="dq-window-11">
+            <div class="dq-window-21">
+                <div class="dq-window-31">
+                <div class="text">
+                    <div class="caption">
+                    <h1>＊ Contact Form</h1>
+                    <p style="margin: auto 0;">お問い合わせフォーム</p>
+                    </div>
+                    <p>下記フォームに必要事項をご記入の上、送信ボタンをクリックしてください。</p>
+                    
+                    <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="entry.2005620554" placeholder=" 例）山田太郎" required>
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for="email">Mail Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="entry.1045781291" placeholder=" 例）example@mail.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for="message">Contents <span class="required">*</span></label>
+                        <textarea id="message" name="entry.839337160" rows="8" required></textarea>
+                        </div>
+                        
+                        <div class="form-submit">
+                        <button type="submit" class="submit-btn">送信する</button>
+                        </div>
+                    </form>
+                    <div id="formStatus" class="form-status"></div>
+                    </div>
+                    
+                    <script>
+                    $(document).ready(function() {
+                        $("#contactForm").on("submit", function(e) {
+                        e.preventDefault(); // ページ遷移を防ぐ
+
+                        const form = document.getElementById("contactForm");
+                        const formData = new FormData(form);
+                        fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSeWsSk3l4xdD31gB7bOfcXLfqLpT3tzg-SxymVRiUq9ffNZVQ/formResponse", {
+                            method: "POST",
+                            mode: "no-cors", // これが大事
+                            body: formData
+                        })
+                        .then(() => {
+                            // 送信後にthankyou.htmlに遷移
+                            window.location.href = "thankyou.html";
+                        })
+                        .catch(() => {
+                            alert("送信に失敗しました。再度お試しください。");
+                        });
+                        });
+                    });
+                    </script>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="centering">
+                <p></p>
+                <h1>Thank you for visiting!</h1>
+            </div>
+        </div>
+        <small>&copy;2025 <a href= "https://github.com/santahirai">SantaHirai</a></small>
+    </div>
+    <p id="page-top"><a href="#">TOP</a></p>
+</body>
+</html>
