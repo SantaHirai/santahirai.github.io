@@ -158,6 +158,10 @@ a:link {
     color: #5050ee;
    }
 
+a:visited {
+    color: #7443ce;
+   }
+
 #page-top {
 position: fixed;
 bottom: 20px;
